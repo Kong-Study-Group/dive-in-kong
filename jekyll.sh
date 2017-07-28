@@ -17,7 +17,7 @@ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 gem install bundler || exit 1
 bundle config mirror.https://rubygems.org https://gems.ruby-china.org || exit 1
 
-bundle add json
+bundle add json --version=2.1.0
 cnpm install
 cnpm test
 cnpm start
