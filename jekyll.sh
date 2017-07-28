@@ -3,7 +3,19 @@
 # For CentOS Linux release 7.3.1611 (Core)
 # install jekyll development environment
 
-cd $1 || exit 1
+ROOT=$1
+
+if [ $# -eq 0 ]; then
+    echo "enter root dir"
+    exit 1
+fi
+
+if [ ! -d "$ROOT" ]; then
+    echo "$ROOT not exsit"
+    exit 1
+fi
+
+cd $ROOT || exit 1
 
 sudo yum -y install nodejs npm ntpdate
 sudo yum -y install ruby ruby-devel gem
